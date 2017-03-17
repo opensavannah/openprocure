@@ -1,0 +1,6 @@
+<select id="filter-<%= column %>" name="<%= column %>" class="form-control">
+  <option value=""><%= placeholder %></option>
+  <% breakpoints.each do |value| %>
+    <option><%= h value %></option>
+  <% end %>
+</select>

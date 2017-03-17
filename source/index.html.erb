@@ -1,0 +1,26 @@
+<section class="page-header">
+  <h1 class="project-name"><%= data.project.name %></h1>
+  <h2 class="project-tagline"><%= data.project.tagline %></h2>
+  <%= link_to "View on GitHub", data.project.repository_url, class: "btn", target: "blank" %>
+  <%= link_to "Contribute to the data", data.project.edit_url, class: "btn", target: "blank" %>
+</section>
+
+<section class="main-content">
+  <h3><a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to <%= data.project.name %></h3>
+
+  <p><%= data.project.name %> lists public agencies and their respective procurement thresholds. 
+    This guide identifies the dollar amount under which a government agency can purchase a product or a service
+    without having to solicit competitive bids.
+  </p>
+
+  <section class="data-table">
+    <%= partial "table" %>
+    <%= link_to "Download all data in CSV format", "procurement.csv", class: "btn btn-primary" %>
+  </section>
+
+  <section class="terminology">
+    <%= partial "terminology" %>
+  </section>
+      
+  <%= partial "footer" %>
+</section>

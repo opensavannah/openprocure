@@ -1,0 +1,56 @@
+th {
+  background: none;
+}
+.procurement-table {
+  font-size: 15px;
+}
+
+.procurement-table thead th {
+  font-weight: bold;
+  color: #000;
+}
+
+tbody .column-text {
+  text-align: center;
+}
+
+tbody .column-link {
+  text-align: center;
+}
+
+tbody .column-number {
+  text-align: right;
+}
+
+.procurement-table tbody td a {
+  color: #268bd2;
+  text-decoration: underline;
+}
+
+.procurement-table tbody td a:hover {
+  color: #0738A1;
+  text-decoration: underline;
+}
+
+.filters {
+  float: left;
+}
+
+th a, th a:hover {
+  color: #000;
+}
+.dynatable-record-count {
+  text-align: right;
+}
+
+.dynatable-arrow {
+  white-space: nowrap;
+}
+
+.filters select {
+  padding: 6px 6px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  background-image: none;
+}

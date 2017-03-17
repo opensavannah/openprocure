@@ -1,0 +1,35 @@
+<span class="filters">
+  <span>Filters:</span>
+  <%= partial "filter_values", locals: {
+    column: :state,
+    placeholder: "State"
+  } %>
+  <%= partial "filter_values", locals: {
+    column: :type,
+    placeholder: "Agency Type"
+  } %>
+</span>
+<table class="procurement-table">
+  <thead>
+    <tr>
+      <th class="column-text">Agency</th>
+      <th class="column-text">State</th>
+      <th class="column-text" data-dynatable-column="type">Agency Type</th>
+      <th class="column-link">Discretionary Threshold</th>
+      <th class="column-link">Formal Threshold</th>
+      <th class="column-number">Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.procurement.each do |procurement| %>
+      <tr>
+        <td><%= procurement.agency %></td>
+        <td><%= procurement.state %></td>
+        <td><%= procurement.type %></td>
+        <td><%= wrap_link_if procurement.discretionary_url, number_to_money(procurement.discretionary_threshold), procurement.discretionary_url, title: "Source of threshold",  target: "_blank" %></td>
+        <td><%= wrap_link_if procurement.formal_url, number_to_money(procurement.formal_threshold), procurement.formal_url, title: "Source of threshold", target: "_blank" %></td>
+        <td><%= number_to_delimited(procurement.population) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
